@@ -83,6 +83,7 @@ const Missions: React.FC = (): JSX.Element => {
                             {
                                 
                                 setInputValue(object.description);
+                                deleteMission(object.id);
                               //  textRef.current?.focus();
                                 
                             }
