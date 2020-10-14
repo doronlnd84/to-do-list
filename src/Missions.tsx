@@ -59,7 +59,7 @@ const Missions: React.FC = (): JSX.Element => {
                              />
              {allMissions.list.map(function(object, i){
                return <div   className={object.done ? classes.Done : classes.ToDo} key={i}> 
-                          <Grid container justify="flex-start"  className={classes.gridAlign} >
+                          <Grid container justify="flex-start" className={classes.gridAlign} >
                           <Checkbox 
                              color="primary"
                             checked={object.done===true}
