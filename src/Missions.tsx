@@ -77,6 +77,7 @@ const Missions: React.FC = (): JSX.Element => {
                             <Grid container justify="flex-end">
                                 <Button 
                                     disabled= {object.done === true}
+                                    // fix the function it is deleting the task instead of editing it
                                     onClick={() => {
                                         if(object.id) {
                                             setInputValue(object.description);
