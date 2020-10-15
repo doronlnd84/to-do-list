@@ -1,4 +1,3 @@
-import Mission from '../../Mission';
 import {store} from '../store';
 import * as actionTypes from './missionActionTypes';
 
