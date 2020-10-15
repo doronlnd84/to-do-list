@@ -96,8 +96,7 @@ const Missions: React.FC = (): JSX.Element => {
                                 </Button>
                           </Grid>
                       </div>
-                    }
-                )
+                })
             }
         </div>
   )
