@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {missions} from './store/Mission/missionReducer'
 import StoreStateType from './store/storeStateType';
 import TextField from '@material-ui/core/TextField';
 import useStyles from './common/styles';
@@ -8,6 +7,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import {setNewMission,setMissionChecked,deleteMission} from './store/Mission/missionActionCreators';
+import Mission from './Mission';
 
 // change to arrow function
 // meaningful name to the parameter
@@ -24,7 +24,7 @@ const Missions: React.FC = (): JSX.Element => {
     const [inputValue, setInputValue] = React.useState<string>('');
     // dont need the ref
     const textRef = React.useRef();
-    const allMissions = useSelector<StoreStateType,missions>(s=>s.missions);
+    const allMissions = useSelector<StoreStateType,Mission[]>(s=>s.missions);
     
     // JS blockes are just like java, not C#/C
     // const func = () => {
@@ -59,7 +59,7 @@ const Missions: React.FC = (): JSX.Element => {
                 }}
             />
             {/* Change to arrow function */}
-            {allMissions.list.map(function(object, i){
+            {allMissions.map(function(object, i){
                 return <div className={object.done ? classes.Done : classes.ToDo} key={i}> 
                             <Grid container justify="flex-start" className={classes.gridAlign} >
                                 <Checkbox 
